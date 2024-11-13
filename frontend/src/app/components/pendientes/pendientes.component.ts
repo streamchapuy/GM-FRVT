@@ -1,37 +1,37 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { OtService } from '../../../services/ot.service';
+// import { OtService } from '../../../services/ot.service';
 
 @Component({
   selector: 'app-pendientes',
   templateUrl: './pendientes.component.html',
   styleUrls: ['./pendientes.component.css']
 })
-export class PendientesComponent implements OnInit {
-  ordenesPendientes: any[] = [];
-  ordenSeleccionada: any = null;
+export class PendientesComponent {
+  // ordenesPendientes: any[] = [];
+  // ordenSeleccionada: any = null;
 
-  constructor(private otService: OtService) {}
+  // constructor(private otService: OtService) {}
 
-  ngOnInit(): void {
-    this.obtenerOrdenesPendientes();
-  }
+  // ngOnInit(): void {
+  //   this.obtenerOrdenesPendientes();
+  // }
 
-  obtenerOrdenesPendientes(): void {
-    this.otService.obtenerOt().subscribe(
-      (data) => {
-        const ordenes = data.filter((orden: any) => orden.estado === 'pendiente');
-        if (ordenes.length === 0) {
-          this.ordenesPendientes = this.obtenerOrdenesEjemplo();
-        } else {
-          this.ordenesPendientes = ordenes;
-        }
-      },
-      (error) => {
-        console.error('Error al obtener las órdenes de trabajo pendientes', error);
-        this.ordenesPendientes = this.obtenerOrdenesEjemplo();
-      }
-    );
-  }
+  // obtenerOrdenesPendientes(): void {
+  //   this.otService.obtenerOt().subscribe(
+  //     (data) => {
+  //       const ordenes = data.filter((orden: any) => orden.estado === 'pendiente');
+  //       if (ordenes.length === 0) {
+  //         this.ordenesPendientes = this.obtenerOrdenesEjemplo();
+  //       } else {
+  //         this.ordenesPendientes = ordenes;
+  //       }
+  //     },
+  //     (error) => {
+  //       console.error('Error al obtener las órdenes de trabajo pendientes', error);
+  //       this.ordenesPendientes = this.obtenerOrdenesEjemplo();
+  //     }
+  //   );
+  // }
 
   obtenerOrdenesEjemplo(): any[] {
     return [
@@ -58,17 +58,17 @@ export class PendientesComponent implements OnInit {
     ];
   }
 
-  seleccionarOrden(orden: any): void {
-    this.ordenSeleccionada = orden;
-  }
+  // seleccionarOrden(orden: any): void {
+  //   this.ordenSeleccionada = orden;
+  // }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: Event): void {
-    const targetElement = event.target as HTMLElement;
-    if (!targetElement.closest('.orden-card')) {
-      this.ordenSeleccionada = null;
-    }
-  }
+  // @HostListener('document:click', ['$event'])
+  // onDocumentClick(event: Event): void {
+  //   const targetElement = event.target as HTMLElement;
+  //   if (!targetElement.closest('.orden-card')) {
+  //     this.ordenSeleccionada = null;
+  //   }
+  // }
 
   redirigirAOrden(): void{
     console.log();

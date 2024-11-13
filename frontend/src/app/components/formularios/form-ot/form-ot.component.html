@@ -2,6 +2,7 @@
   <h2>Órdenes de Trabajo</h2>
 
   <div class="lista-ordenes-trabajo-container">
+    <button class="volver" type="button" (click)="volver()">Volver</button>
     <h2>Lista de Órdenes de Trabajo</h2>
     <div class="table-container">
       <table>
@@ -18,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let orden of ordenesTrabajo">
+          <tr *ngFor="let orden of paginadoSectores" (click)="seleccionarOrden(orden)">
             <td>{{ orden.id_orden_trabajo }}</td>
             <td>{{ orden.descripcion }}</td>
             <td>{{ orden.id_usuarios }}</td>
@@ -31,5 +32,11 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>
+    <span>Página {{ currentPage + 1 }} de {{ Math.ceil(ordenesTrabajo.length / itemsPerPage) }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= (ordenesTrabajo.length / itemsPerPage) - 1">Siguiente</button>
   </div>
 </div>

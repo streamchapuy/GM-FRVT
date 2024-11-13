@@ -27,6 +27,7 @@
     </div>
 
     <div class="form-actions">
+      <button type="button" (click)="volver()">Volver</button>
       <button type="button" (click)="crear()">Crear</button>
       <button type="button" (click)="editar()">Editar</button>
       <button type="button" (click)="eliminar()">Eliminar</button>
@@ -47,7 +48,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let edificio of edificios" (click)="seleccionarEdificio(edificio)">
+          <tr *ngFor="let edificio of paginadoSectores" (click)="seleccionarEdificio(edificio)">
             <td>{{ edificio.id_edificio }}</td>
             <td>{{ edificio.nombre }}</td>
             <td>{{ edificio.calle }}</td>
@@ -56,5 +57,11 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>
+    <span>Página {{ currentPage + 1 }} de {{ Math.ceil(edificios.length / itemsPerPage) }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= (edificios.length / itemsPerPage) - 1">Siguiente</button>
   </div>
 </div>

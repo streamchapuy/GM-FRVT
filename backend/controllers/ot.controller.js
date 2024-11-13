@@ -30,21 +30,35 @@ export const getOT = async (req, res) => {
     }
 };
 
-export const createOT = async (req, res) => {
-    const { id_tag, id_usuarios,id_estado, descripcion, fecha_creacion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion } = req.body;
+export const createOT = async (req, res) => { 
+    const { id_tag, id_usuarios, id_estado, descripcion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion } = req.body;
+
+    // Validación básica de los datos
+    if (!id_tag || !id_usuarios || !id_estado || !descripcion || !fecha_finalizacion || !tiempo_inicio || !tiempo_finalizacion) {
+        return res.status(400).json({
+            message: 'Faltan datos requeridos en la solicitud',
+        });
+    }
+
     try {
+        // Inserción de datos en la tabla orden_trabajo
         const [rows] = await pool.query(
-            'INSERT INTO orden_trabajo (id_ot, id_tag, id_usuarios,id_estado, descripcion, fecha_creacion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            [id_tag, id_usuarios, id_estado, descripcion, fecha_creacion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion]
+            'INSERT INTO orden_trabajo (id_tag, id_usuarios, id_estado, descripcion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [id_tag, id_usuarios, id_estado, descripcion, fecha_finalizacion, tiempo_inicio, tiempo_finalizacion]
         );
-        res.send({ rows });
+
+        console.log(rows); // Verifica si se ha insertado correctamente
+        res.status(201).json({ message: 'Orden de trabajo creada con éxito', rows });
+
     } catch (error) {
+        console.error(error); // Ayuda a depurar
         return res.status(500).json({
             message: 'Error al crear la orden de trabajo',
             error: error.message
         });
     }
 };
+
 
 export const editOT = async (req, res) => {
     const { id_ot } = req.params;

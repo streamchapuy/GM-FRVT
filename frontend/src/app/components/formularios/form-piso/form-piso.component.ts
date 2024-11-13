@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PisoService } from '../../../../services/piso.service';
 import { Piso } from '../../../interfaces/piso';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-form-piso',
@@ -19,17 +21,42 @@ export class FormPisoComponent implements OnInit {
   ];
   
   pisos: Piso[] = [];
+  currentPage: number = 0;
+  itemsPerPage: number = 6;
+  Math: any = Math;
 
-  constructor(private pisoService: PisoService) { }
+  constructor(private pisoService: PisoService, private router: Router) { }
 
   ngOnInit(): void {
     this.cargarPisos();
+  }
+
+  volver(){
+    this.router.navigate(['/home-logged']);
   }
 
   cargarPisos(): void {
     this.pisoService.obtenerPisos().subscribe((data: Piso[]) => {
       this.pisos = data;
     });
+  }
+
+  get paginadoSectores() {
+    const start = this.currentPage * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    return this.pisos.slice(start, end);
+  }
+
+  nextPage(): void {
+    if (this.currentPage < Math.ceil(this.pisos.length / this.itemsPerPage) - 1) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+    }
   }
 
   crear(): void {

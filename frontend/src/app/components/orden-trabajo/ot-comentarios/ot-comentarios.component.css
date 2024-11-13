@@ -8,7 +8,7 @@
 .izquierda {
     width: 100%;
     height: 10%;
-    background-color: rgb(194, 202, 209);   
+    background-color: #0c486c;   
     display: flex;
     align-items: center;
     text-align: center;
@@ -16,7 +16,7 @@
 }
 .izquierda p {
     font-size: 14.3px;
-    color: black;
+    color: white;
     text-align: center;
     margin-top: 15px;
     padding: 10px;
