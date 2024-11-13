@@ -3,7 +3,7 @@
         <p>Código Único de Identificación Activo:</p>
     </div>
     <div class="derecha">
-        <select name="num" id="selector" [(ngModel)]="selectorcodigo">
+        <select name="num" id="selector" [(ngModel)]="selectorcodigo"(change)="loadFilters()">
             <option *ngFor="let CodigoActivo of CodigoActivo" [value]="CodigoActivo"> {{ CodigoActivo.abreviatura_activo+ CodigoActivo.edificio_id_formateado+ CodigoActivo.piso_id_formateado+ CodigoActivo.sector_id_formateado+ CodigoActivo.activo_id_formateado+ CodigoActivo.ubicacion_id_formateado+ CodigoActivo.cantidad_formateada}} </option>
         </select>
     </div>

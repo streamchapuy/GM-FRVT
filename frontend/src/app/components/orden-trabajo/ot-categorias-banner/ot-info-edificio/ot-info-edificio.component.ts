@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EdificioService } from '../../../../../services/edificio.service';
 import { Edificio } from '../../../../interfaces/edificio';
+import { FiltrosService } from '../../../../../services/filtros.service';
+import { FiltroInterfas } from '../../../../interfaces/filtros-interfas';
 
 @Component({
   selector: 'app-ot-info-edificio',
@@ -9,11 +11,13 @@ import { Edificio } from '../../../../interfaces/edificio';
 })
 export class OtInfoEdificioComponent implements OnInit{
   edificios: Edificio[] = [];
+  Edificios: FiltroInterfas[] = [];
   selectorEdificio: number | null = null;
-  constructor(private edificioService: EdificioService) { }
+  constructor(private edificioService: EdificioService, private filtrosService: FiltrosService) { }
 
   ngOnInit(): void {
     this.loadEdificios();
+    this.loadFilters();
   }
   loadEdificios() {
     this.edificioService.obtenerEdificio().subscribe({
@@ -24,6 +28,14 @@ export class OtInfoEdificioComponent implements OnInit{
       error: (err) => {
         console.error('Error al cargar los edificios:', err);
       }
+    });
+  }
+  loadFilters() {
+    this.filtrosService.filtroPorEdificio({
+      id_edificio: 0
+    }).subscribe({
+      next: (data) => this.Edificios = data,
+      error: (err) => console.error('Error al filtrar los edificios:', err)
     });
   }
 }

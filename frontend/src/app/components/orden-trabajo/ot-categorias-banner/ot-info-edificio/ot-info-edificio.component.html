@@ -3,7 +3,7 @@
         <p>Edificio:</p>
     </div>
     <div class="derecha">
-        <select name="edificio" id="selector" [(ngModel)]="selectorEdificio">
+        <select name="edificio" id="selector" [(ngModel)]="selectorEdificio"(change)="loadFilters()">
             <option *ngFor="let edificio of edificios" [value]="edificio"> {{ edificio.nombre }} </option>
         </select>
     </div>

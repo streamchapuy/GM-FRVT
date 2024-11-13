@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SectorService } from '../../../../../services/sector.service';
 import { Sector } from '../../../../interfaces/sector';
+import { FiltrosService } from '../../../../../services/filtros.service';
+import { FiltroInterfas } from '../../../../interfaces/filtros-interfas';
 
 @Component({
   selector: 'app-ot-info-sector',
@@ -13,14 +15,16 @@ selectOption(_t14: Sector) {
 throw new Error('Method not implemented.');
 }
   sectores: Sector[] = [];
+  Sectores: FiltroInterfas[] = [];
   filteredSectores: Sector[] = [];
   selectorSector: number | null = null;
   searchText: string = '';
 
-  constructor(private sectorService: SectorService) {}
+  constructor(private sectorService: SectorService, private filtrosService: FiltrosService) {}
 
   ngOnInit(): void {
     this.loadSectores();
+    this.loadFilters();
   }
 
   loadSectores() {
@@ -41,5 +45,13 @@ throw new Error('Method not implemented.');
     this.filteredSectores = this.sectores.filter(sector =>
       sector.nombre.toLowerCase().includes(search)
     );
+  }
+  loadFilters() {
+    this.filtrosService.filtroPorSector({
+      id_sector: 0
+    }).subscribe({
+      next: (data) => this.Sectores = data,
+      error: (err) => console.error('Error al filtrar los sectores:', err)
+    });
   }
 }

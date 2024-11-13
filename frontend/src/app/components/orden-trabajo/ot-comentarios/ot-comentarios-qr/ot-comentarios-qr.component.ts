@@ -12,8 +12,8 @@ export class OtComentariosQrComponent implements OnInit {
   constructor(private qrService: QrService) {}  // Inyecta el servicio
 
   ngOnInit() {
-    this.generateQRCode('http://localhost:4200/');
-    this.generateQRCode('http://192.168.0.106:4200/');
+    this.generateQRCode('http://localhost:4200/ordenTrabajo');
+    this.generateQRCode('http://192.168.0.106:4200/ordenTrabajo');
   }
 
   async generateQRCode(data: string) {

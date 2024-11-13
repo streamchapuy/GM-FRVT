@@ -3,8 +3,8 @@
         <p>Piso/Nivel:</p>
     </div>
     <div class="derecha">
-        <select name="piso" id="selector" [(ngModel)]="selectorPiso">
-            <option *ngFor="let piso of pisos" [value]="piso"> {{ piso.nombre }}> </option>
+        <select name="piso" id="selector" [(ngModel)]="selectorPiso" (change)="loadFilters()">
+            <option *ngFor="let piso of pisos" [value]="piso"> {{ piso.nombre }} </option>
         </select>
     </div>
 </div>

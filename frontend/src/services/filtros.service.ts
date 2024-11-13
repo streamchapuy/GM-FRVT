@@ -1,37 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FiltroInterfas } from '../app/interfaces/filtros-interfas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FiltrosService {
+
   private apiUrl = 'http://127.0.0.1:3307/API';
 
   constructor(private http: HttpClient) {}
 
-  // Obtener datos por tag
-  getDatosPorTag(idTag: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/filtrostag${idTag}`);
+  // Filtro por Tag
+  filtroPorTag(consulta: { id_tag: number } ): Observable<any> {
+    return this.http.post(`${this.apiUrl}/filtrostag`,consulta);
   }
 
-  // Obtener tags por activo
-  getTagsPorActivo(idActivo: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/activosfiltros${idActivo}`);
+  // Filtro por Activo
+  filtroPorActivo(consulta: {id_activo: number} ): Observable<any> {
+    return this.http.post(`${this.apiUrl}/activosfiltros`,consulta);
   }
 
-  // Obtener tags por edificio
-  getTagsPorEdificio(idEdificio: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/filtrosedificio${idEdificio}`);
+  // Filtro por Edificio
+  filtroPorEdificio(consulta: {id_edificio: number} ): Observable<any> {
+    return this.http.post(`${this.apiUrl}/filtrosedificio`,consulta);
   }
 
-  // Obtener tags por piso
-  getTagsPorPiso(idPiso: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/filtrospiso${idPiso}`);
+  // Filtro por Piso
+  filtroPorPiso(consulta: {id_piso: number} ): Observable<any> {
+    return this.http.post(`${this.apiUrl}/filtrospiso`,consulta);
   }
 
-  // Obtener tags por sector
-  getTagsPorSector(idSector: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/filtrossector${idSector}`);
+  // Filtro por Sector
+  filtroPorSector(consulta: {id_sector: number} ): Observable<any> {
+    return this.http.post(`${this.apiUrl}/filtrossector`,consulta);
   }
 }

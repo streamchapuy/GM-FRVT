@@ -5,7 +5,7 @@
     <div *ngIf="ordenesTerminadas.length > 0; else noOrdenes">
       <div *ngFor="let orden of ordenesTerminadas" class="orden-card" (click)="seleccionarOrden(orden)"
         [class.selected]="ordenSeleccionada === orden">
-        <p><strong>ID Orden:</strong> {{ orden.id_ot }}</p>
+        <p><strong>Nro Orden:</strong> {{ orden.id_ot }}</p>
         <p><strong>Descripción:</strong> {{ orden.descripcion }}</p>
         <p><strong>Operador:</strong> {{ orden.nombre_operario }}</p>
         <p><strong>Estado:</strong> {{ orden.estado_orden }}</p>
