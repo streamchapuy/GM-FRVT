@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivoService } from '../../../../services/activo.service';
 import { Activo } from '../../../interfaces/activo';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-form-activo',
@@ -21,17 +23,42 @@ export class FormActivoComponent implements OnInit {
   ];
 
   activos: Activo[] = [];
+  currentPage: number = 0;
+  itemsPerPage: number = 6;
+  Math: any = Math;
 
-  constructor(private activoService: ActivoService) { }
+  constructor(private activoService: ActivoService, private router: Router) { }
 
   ngOnInit() {
     this.obtenerActivos();
+  }
+
+  volver(){
+    this.router.navigate(['/home-logged']);
   }
 
   obtenerActivos() {
     this.activoService.obtenerActivos().subscribe((data: Activo[]) => {
       this.activos = data;
     });
+  }
+
+  get paginadoSectores() {
+    const start = this.currentPage * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    return this.activos.slice(start, end);
+  }
+
+  nextPage(): void {
+    if (this.currentPage < Math.ceil(this.activos.length / this.itemsPerPage) - 1) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+    }
   }
 
   seleccionarActivo(activo: Activo) {

@@ -9,25 +9,32 @@ import { NumeroOT } from '../../../../interfaces/numero-ot';
   styleUrl: './ot-info-n.component.css'
 })
 export class OtInfoNComponent implements OnInit {
-  ots: NumeroOT[] = [];
-  selectorOT: number | null = null;
-  constructor(private otService: NumeroOTService) { }
+  ots: NumeroOT[] = [];  // Lista de órdenes de trabajo
+  selectorOT: NumeroOT | undefined;  // OT seleccionada
+
+  constructor(private numeroOTService: NumeroOTService) {}
 
   ngOnInit(): void {
-    this.loadOts();
+    this.getOrdenesTrabajo();  // Cargar las OT cuando el componente se inicie
   }
-  loadOts() {
-    this.otService.obtenerNumeroOT().subscribe({
-      next: (data: NumeroOT[]) => {
-        this.ots = data;
-        console.log(this.ots);
+
+  getOrdenesTrabajo(): void {
+    this.numeroOTService.obtenerNumeroOT().subscribe(
+      (data: NumeroOT[]) => {
+        this.ots = data; // Asigna las órdenes de trabajo a la variable 'ots'
       },
-      error: (err) => {
-        console.error('Error al cargar los OT:', err);
+      (error) => {
+        console.error('Error al obtener las OT:', error);
       }
-    });
+    );
   }
 
-
-
+  // Método que se puede llamar cuando se seleccione una OT (si es necesario)
+  onSelectOT(): void {
+    if (this.selectorOT) {
+      console.log('OT seleccionada:', this.selectorOT);
+    }
+  }
 }
+
+

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SectorService } from '../../../../services/sector.service';
 import { Sector } from '../../../interfaces/sector';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-form-sector',
@@ -19,8 +21,11 @@ export class FormSectorComponent implements OnInit {
   ];
   
   sectores: Sector[] = [];
+  currentPage: number = 0;
+  itemsPerPage: number = 6;
+  Math: any = Math;
 
-  constructor(private sectorService: SectorService) { }
+  constructor(private sectorService: SectorService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerSectores();
@@ -36,6 +41,29 @@ export class FormSectorComponent implements OnInit {
       }
     );
   }
+
+  get paginatedSectores() {
+    const start = this.currentPage * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    return this.sectores.slice(start, end);
+  }
+
+  nextPage(): void {
+    if (this.currentPage < Math.ceil(this.sectores.length / this.itemsPerPage) - 1) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+    }
+  }
+
+  volver(){
+    this.router.navigate(['/home-logged']);
+  }
+
 
   crear(): void {
     this.sectorService.crearSector(this.sector).subscribe(

@@ -9,7 +9,7 @@
 .izqueirda {
     width: 80%;
     height: 100%;
-    background-color: rgb(194, 202, 209);
+    background-color: #0c486c;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -20,7 +20,7 @@
 
 .izqueirda p {
     font-size: 14.3px;
-    color: black;
+    color: white;
     text-align: center;
     margin-top: 10px;
 }

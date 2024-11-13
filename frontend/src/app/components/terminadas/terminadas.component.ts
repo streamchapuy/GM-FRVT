@@ -1,37 +1,37 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { OtService } from '../../../services/ot.service';
+// import { OtService } from '../../../services/ot.service';
 
 @Component({
   selector: 'app-terminadas',
   templateUrl: './terminadas.component.html',
   styleUrls: ['./terminadas.component.css']
 })
-export class TerminadasComponent implements OnInit {
+export class TerminadasComponent{
   ordenesTerminadas: any[] = [];
   ordenSeleccionada: any = null;
 
-  constructor(private otService: OtService) {}
+  // constructor(private otService: OtService) {}
 
-  ngOnInit(): void {
-    this.obtenerOrdenesTerminadas();
-  }
+  // ngOnInit(): void {
+  //   this.obtenerOrdenesTerminadas();
+  // }
 
-  obtenerOrdenesTerminadas(): void {
-    this.otService.obtenerOt().subscribe(
-      (data) => {
-        const ordenes = data.filter((orden: any) => orden.estado === 'finalizado');
-        if (ordenes.length === 0) {
-          this.ordenesTerminadas = this.obtenerOrdenesEjemplo();
-        } else {
-          this.ordenesTerminadas = ordenes;
-        }
-      },
-      (error) => {
-        console.error('Error al obtener las órdenes de trabajo pendientes', error);
-        this.ordenesTerminadas = this.obtenerOrdenesEjemplo();
-      }
-    );
-  }
+  // obtenerOrdenesTerminadas(): void {
+  //   this.otService.obtenerOt().subscribe(
+  //     (data) => {
+  //       const ordenes = data.filter((orden: any) => orden.estado === 'finalizado');
+  //       if (ordenes.length === 0) {
+  //         this.ordenesTerminadas = this.obtenerOrdenesEjemplo();
+  //       } else {
+  //         this.ordenesTerminadas = ordenes;
+  //       }
+  //     },
+  //     (error) => {
+  //       console.error('Error al obtener las órdenes de trabajo pendientes', error);
+  //       this.ordenesTerminadas = this.obtenerOrdenesEjemplo();
+  //     }
+  //   );
+  // }
 
   obtenerOrdenesEjemplo(): any[] {
     return [

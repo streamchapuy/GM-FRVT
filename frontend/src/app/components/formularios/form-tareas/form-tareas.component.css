@@ -5,10 +5,12 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
 }
 
 .lista-tareas-container {
     width: 100%;
+    min-height: 75vh;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -62,6 +64,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    background-color: #0c486c;
 }
 
 button:hover {
@@ -73,19 +76,19 @@ button:active {
 }
 
 button:nth-child(1) {
-    background-color: #007bff;
+    background-color: #0c486c;
 }
 
 button:nth-child(2) {
-    background-color: #007bff;
+    background-color: #0c486c;
 }
 
 button:nth-child(3) {
-    background-color: #007bff;
+    background-color: #0c486c;
 }
 
 button:nth-child(4) {
-    background-color: #007bff;
+    background-color: #0c486c;
 }
 
 .lista-tareas-container {
@@ -95,6 +98,7 @@ button:nth-child(4) {
 .table-container {
     width: 100%;
     overflow-x: auto;
+    min-height: 100%;
 }
 
 table {
@@ -117,4 +121,14 @@ th {
 tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-around;;
+    text-align: center;
+    margin-top: 0px;
+}
+span{
+    margin-top: 8px;
 }

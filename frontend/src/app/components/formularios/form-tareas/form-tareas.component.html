@@ -21,6 +21,7 @@
   </div>
 
   <div class="form-actions">
+    <button type="button" (click)="volver()">Volver</button>
     <button type="button" (click)="crear()">Crear</button>
     <button type="button" (click)="editar()">Editar</button>
     <button type="button" (click)="eliminar()">Eliminar</button>
@@ -39,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tarea of tareas" (click)="seleccionarTarea(tarea)">
+          <tr *ngFor="let tarea of paginadoSectores" (click)="seleccionarTarea(tarea)">
             <td>{{ tarea.id_tarea }}</td>
             <td>{{ tarea.descripcion }}</td>
             <td>{{ tarea.existencia }}</td>
@@ -47,5 +48,11 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>
+    <span>Página {{ currentPage + 1 }} de {{ Math.ceil(tareas.length / itemsPerPage) }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= (tareas.length / itemsPerPage) - 1">Siguiente</button>
   </div>
 </div>

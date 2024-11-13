@@ -2,7 +2,7 @@
 
   <div class="cards">
     <h1>Órdenes de Trabajo Pendientes</h1>
-    <div *ngIf="ordenesPendientes.length > 0; else noOrdenes">
+    <!-- <div *ngIf="ordenesPendientes.length > 0; else noOrdenes">
       <div *ngFor="let orden of ordenesPendientes" class="orden-card" (click)="seleccionarOrden(orden)"
         [class.selected]="ordenSeleccionada === orden">
         <p><strong>Nro Orden:</strong> {{ orden.id_ot }}</p>
@@ -15,7 +15,7 @@
           <button class="seleccionar" (click)="redirigirAOrden()">Seleccionar</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <ng-template #noOrdenes>
       <div class="no-orden">
