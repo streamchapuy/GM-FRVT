@@ -4,12 +4,12 @@ import { QrService } from '../../../../../services/qr.service';
 @Component({
   selector: 'app-ot-comentarios-qr',
   templateUrl: './ot-comentarios-qr.component.html',
-  styleUrls: ['./ot-comentarios-qr.component.scss']
+  styleUrls: ['./ot-comentarios-qr.component.css']
 })
 export class OtComentariosQrComponent implements OnInit {
   qrCodeImage: string = '';
 
-  constructor(private qrService: QrService) {}  // Inyecta el servicio
+  constructor(private qrService: QrService) {} 
 
   ngOnInit() {
     this.generateQRCode('http://localhost:4200/ordenTrabajo');
@@ -18,7 +18,7 @@ export class OtComentariosQrComponent implements OnInit {
 
   async generateQRCode(data: string) {
     try {
-      this.qrCodeImage = await this.qrService.generateQRCode(data);  // Llama al servicio
+      this.qrCodeImage = await this.qrService.generateQRCode(data);
     } catch (err) {
       console.error('Error al generar QR:', err);
     }

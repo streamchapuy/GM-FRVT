@@ -1,0 +1,770 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gm-frvt documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gm-frvt documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BuscadorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/header-logged/buscador/buscador.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-buscador</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./buscador.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./buscador.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#searchMapping" >searchMapping</a>
+                            </li>
+                            <li>
+                                <a href="#searchValue" >searchValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onSearch" >onSearch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#searchTerm" >searchTerm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/components/header-logged/buscador/buscador.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchTerm"></a>
+                        <b>searchTerm</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/header-logged/buscador/buscador.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <span ><b>onSearch</b></span>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/components/header-logged/buscador/buscador.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchMapping"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>searchMapping</b></span>
+                        <a href="#searchMapping"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;orden de trabajo&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;ot&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;crear&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;generar&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;activo&#x27;: &#x27;/formActivo&#x27;,
+    &#x27;activos&#x27;: &#x27;/formActivo&#x27;,
+    &#x27;edificio&#x27;: &#x27;/formEdificio&#x27;,
+    &#x27;edificios&#x27;: &#x27;/formEdificio&#x27;,
+    &#x27;ots&#x27;: &#x27;/formOT&#x27;,
+    &#x27;ordenes&#x27;: &#x27;/formOT&#x27;,
+    &#x27;ordenes de trabajo&#x27;: &#x27;/formOT&#x27;,
+    &#x27;piso&#x27;: &#x27;/formPiso&#x27;,
+    &#x27;pisos&#x27;: &#x27;/formPiso&#x27;,
+    &#x27;sector&#x27;: &#x27;/formSector&#x27;,
+    &#x27;sectores&#x27;: &#x27;/formSector&#x27;,
+    &#x27;ubicacion&#x27;: &#x27;/formUbicacion&#x27;,
+    &#x27;ubicaciones&#x27;: &#x27;/formUbicacion&#x27;,
+    &#x27;usuarios&#x27;: &#x27;/formUsuarios&#x27;,
+    &#x27;usuario&#x27;: &#x27;/formUsuarios&#x27;,
+    &#x27;tareas&#x27;: &#x27;/formTareas&#x27;,
+    &#x27;tarea&#x27;: &#x27;/formTareas&#x27;,
+    &#x27;home&#x27;: &#x27;/home-logged&#x27;,
+    &#x27;adin&#x27;: &#x27;/home-logged&#x27;,
+    &#x27;pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo cancelada&#x27;: &#x27;/home-operario&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/header-logged/buscador/buscador.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchValue"></a>
+                    <span class="name">
+                        <span ><b>searchValue</b></span>
+                        <a href="#searchValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/header-logged/buscador/buscador.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Output } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-buscador&#x27;,
+  templateUrl: &#x27;./buscador.component.html&#x27;,
+  styleUrls: [&#x27;./buscador.component.css&#x27;]
+})
+export class BuscadorComponent {
+  @Output() searchTerm &#x3D; new EventEmitter&lt;string&gt;();
+  searchValue: string &#x3D; &#x27;&#x27;;
+
+  private searchMapping: { [key: string]: string } &#x3D; {
+    &#x27;orden de trabajo&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;ot&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;crear&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;generar&#x27;: &#x27;/ordenTrabajo&#x27;,
+    &#x27;activo&#x27;: &#x27;/formActivo&#x27;,
+    &#x27;activos&#x27;: &#x27;/formActivo&#x27;,
+    &#x27;edificio&#x27;: &#x27;/formEdificio&#x27;,
+    &#x27;edificios&#x27;: &#x27;/formEdificio&#x27;,
+    &#x27;ots&#x27;: &#x27;/formOT&#x27;,
+    &#x27;ordenes&#x27;: &#x27;/formOT&#x27;,
+    &#x27;ordenes de trabajo&#x27;: &#x27;/formOT&#x27;,
+    &#x27;piso&#x27;: &#x27;/formPiso&#x27;,
+    &#x27;pisos&#x27;: &#x27;/formPiso&#x27;,
+    &#x27;sector&#x27;: &#x27;/formSector&#x27;,
+    &#x27;sectores&#x27;: &#x27;/formSector&#x27;,
+    &#x27;ubicacion&#x27;: &#x27;/formUbicacion&#x27;,
+    &#x27;ubicaciones&#x27;: &#x27;/formUbicacion&#x27;,
+    &#x27;usuarios&#x27;: &#x27;/formUsuarios&#x27;,
+    &#x27;usuario&#x27;: &#x27;/formUsuarios&#x27;,
+    &#x27;tareas&#x27;: &#x27;/formTareas&#x27;,
+    &#x27;tarea&#x27;: &#x27;/formTareas&#x27;,
+    &#x27;home&#x27;: &#x27;/home-logged&#x27;,
+    &#x27;adin&#x27;: &#x27;/home-logged&#x27;,
+    &#x27;pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo pendientes&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo pendiente&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo activas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo activa&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo terminadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo terminada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo finalizadas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo finalizada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ordenes de trabajo canceladas&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;ot cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden cancelada&#x27;: &#x27;/home-operario&#x27;,
+    &#x27;orden de trabajo cancelada&#x27;: &#x27;/home-operario&#x27;,
+  };
+
+  constructor(private router: Router) { }
+
+  onSearch(): void {
+    const searchValue &#x3D; this.searchValue.toLowerCase().trim();
+
+    for (const key in this.searchMapping) {
+      if (searchValue.includes(key)) {
+        this.router.navigate([this.searchMapping[key]]);
+        return;
+      }
+    }
+
+    this.router.navigate([&#x27;/404&#x27;]);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;buscador&quot;&gt;
+  &lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;searchValue&quot; (keydown.enter)&#x3D;&quot;onSearch()&quot; placeholder&#x3D;&quot;Buscar...&quot;
+    class&#x3D;&quot;buscador-input&quot; /&gt;
+    &lt;button class&#x3D;&quot;buscador-btn&quot; (click)&#x3D;&quot;onSearch()&quot;&gt;
+      &lt;img src&#x3D;&quot;../../../../assets/img/lupa.png&quot; alt&#x3D;&quot;Buscar&quot; class&#x3D;&quot;lupa-icon&quot;&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./buscador.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.buscador {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.buscador-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    color: #333333;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.buscador-input:focus {
+    outline: none;
+    border-color: #1c4258;
+}
+
+.buscador-input::placeholder {
+    color: #333333;
+}
+
+.buscador-btn {
+    position: absolute;
+    right: 21%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.lupa-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="buscador">  <input type="text" [(ngModel)]="searchValue" (keydown.enter)="onSearch()" placeholder="Buscar..."    class="buscador-input" />    <button class="buscador-btn" (click)="onSearch()">      <img src="../../../../assets/img/lupa.png" alt="Buscar" class="lupa-icon">    </button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscadorComponent', 'selector': 'app-buscador'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterDataComponent', 'selector': 'app-footer-data'},{'name': 'FooterLogoComponent', 'selector': 'app-footer-logo'},{'name': 'FormActivoComponent', 'selector': 'app-form-activo'},{'name': 'FormEdificioComponent', 'selector': 'app-form-edificio'},{'name': 'FormLaborComponent', 'selector': 'app-form-labor'},{'name': 'FormOtComponent', 'selector': 'app-form-ot'},{'name': 'FormPisoComponent', 'selector': 'app-form-piso'},{'name': 'FormSectorComponent', 'selector': 'app-form-sector'},{'name': 'FormTareasComponent', 'selector': 'app-form-tareas'},{'name': 'FormUbicacionComponent', 'selector': 'app-form-ubicacion'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'FormUsuariosComponent', 'selector': 'app-form-usuarios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeLoggedComponent', 'selector': 'app-home-logged'},{'name': 'HomeOperarioComponent', 'selector': 'app-home-operario'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoNavComponent', 'selector': 'app-logo-nav'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NavegacionComponent', 'selector': 'app-navegacion'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OtBanerFechachicaComponent', 'selector': 'app-ot-baner-fechachica'},{'name': 'OtBannerChicoComponent', 'selector': 'app-ot-banner-chico'},{'name': 'OtBannerComponent', 'selector': 'app-ot-banner'},{'name': 'OtBannerFechaComponent', 'selector': 'app-ot-banner-fecha'},{'name': 'OtBannerLaborComponent', 'selector': 'app-ot-banner-labor'},{'name': 'OtCategoriasBannerComponent', 'selector': 'app-ot-categorias-banner'},{'name': 'OtComentariosComponent', 'selector': 'app-ot-comentarios'},{'name': 'OtComentariosContenedorQrComponent', 'selector': 'app-ot-comentarios-contenedor-qr'},{'name': 'OtComentariosQrComponent', 'selector': 'app-ot-comentarios-qr'},{'name': 'otComponent', 'selector': 'app-ot'},{'name': 'OtFechaImpresionComponent', 'selector': 'app-ot-fecha-impresion'},{'name': 'OtFechaRealizadaComponent', 'selector': 'app-ot-fecha-realizada'},{'name': 'OtInfoActivoComponent', 'selector': 'app-ot-info-activo'},{'name': 'OtInfoCodigoComponent', 'selector': 'app-ot-info-codigo'},{'name': 'OtInfoEdificioComponent', 'selector': 'app-ot-info-edificio'},{'name': 'OtInfoNComponent', 'selector': 'app-ot-info-n'},{'name': 'OtInfoPisoComponent', 'selector': 'app-ot-info-piso'},{'name': 'OtInfoSectorComponent', 'selector': 'app-ot-info-sector'},{'name': 'OtInstruccionesBannerComponent', 'selector': 'app-ot-instrucciones-banner'},{'name': 'OtInstruccionesTituloComponent', 'selector': 'app-ot-instrucciones-titulo'},{'name': 'OtLaborComponent', 'selector': 'app-ot-labor'},{'name': 'OtLogoBannerComponent', 'selector': 'app-ot-logo-banner'},{'name': 'OtTareaListaComponent', 'selector': 'app-ot-tareas-lista'},{'name': 'OtTareaOperarioComponent', 'selector': 'app-ot-tarea-operario'},{'name': 'OtTiempoComponent', 'selector': 'app-ot-tiempo'},{'name': 'OtTituloBannerComponent', 'selector': 'app-ot-titulo-banner'},{'name': 'PendientesComponent', 'selector': 'app-pendientes'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TerminadasComponent', 'selector': 'app-terminadas'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BuscadorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BuscadorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

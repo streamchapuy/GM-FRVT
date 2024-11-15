@@ -1,0 +1,1121 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gm-frvt documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gm-frvt documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NavComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/header-logged/nav/nav.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-nav</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./nav.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./nav.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isMobile" >isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#isPopupOpen" >isPopupOpen</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#handleSearch" >handleSearch</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onClickOutside" >onClickOutside</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onResize" >onResize</a>
+                            </li>
+                            <li>
+                                <a href="#togglePopup" >togglePopup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#document:click" >document:click</a>
+                            </li>
+                            <li>
+                                <a href="#window:resize" >window:resize</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section data-compodoc="block-methods">
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:click"></a>
+                    <span class="name">
+                        <span ><b>document:click</b></span>
+                        <a href="#document:click"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:click(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:resize"></a>
+                    <span class="name">
+                        <span ><b>window:resize</b></span>
+                        <a href="#window:resize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:resize(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleSearch"></a>
+                    <span class="name">
+                        <span ><b>handleSearch</b></span>
+                        <a href="#handleSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleSearch(term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>term</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickOutside"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onClickOutside</b></span>
+                        <a href="#onClickOutside"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onClickOutside(event: Event)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onResize"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onResize</b></span>
+                        <a href="#onResize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onResize(event: Event)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:resize&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="togglePopup"></a>
+                    <span class="name">
+                        <span ><b>togglePopup</b></span>
+                        <a href="#togglePopup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>togglePopup()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <span ><b>isMobile</b></span>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>window.innerWidth &lt;&#x3D; 768</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPopupOpen"></a>
+                    <span class="name">
+                        <span ><b>isPopupOpen</b></span>
+                        <a href="#isPopupOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/header-logged/nav/nav.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostListener } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-nav&#x27;,
+  templateUrl: &#x27;./nav.component.html&#x27;,
+  styleUrls: [&#x27;./nav.component.css&#x27;]
+})
+export class NavComponent {
+  isPopupOpen &#x3D; false;
+  isMobile &#x3D; window.innerWidth &lt;&#x3D; 768;
+
+  constructor(private router: Router) {}
+
+  handleSearch(term: string): void {
+    console.log(&#x27;Search term:&#x27;, term);
+  }
+
+  togglePopup() {
+    this.isPopupOpen &#x3D; !this.isPopupOpen;
+  }
+
+  logout() {
+    localStorage.removeItem(&#x27;token&#x27;);
+    this.router.navigate([&#x27;/&#x27;]);
+  }
+
+  @HostListener(&#x27;window:resize&#x27;, [&#x27;$event&#x27;])
+  onResize(event: Event) {
+    this.isMobile &#x3D; window.innerWidth &lt;&#x3D; 768;
+    if (!this.isMobile) {
+      this.isPopupOpen &#x3D; false;
+    }
+  }
+
+  @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
+  onClickOutside(event: Event) {
+    const targetElement &#x3D; event.target as HTMLElement;
+
+    if (
+      this.isPopupOpen &amp;&amp;
+      !targetElement.closest(&#x27;.navbar-popup&#x27;) &amp;&amp;
+      !targetElement.closest(&#x27;.navbar-toggler&#x27;)
+    ) {
+      this.isPopupOpen &#x3D; false;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar&quot;&gt;
+    &lt;div class&#x3D;&quot;navbar-container&quot;&gt;
+        &lt;app-logo-nav class&#x3D;&quot;navbar-logo&quot;&gt;&lt;/app-logo-nav&gt;
+
+        &lt;div class&#x3D;&quot;navbar-links&quot;&gt;
+            &lt;button class&#x3D;&quot;logout-button&quot; (click)&#x3D;&quot;logout()&quot;&gt;Cerrar Sesión&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;search-input-container&quot;&gt;
+            &lt;app-buscador (searchTerm)&#x3D;&quot;handleSearch($event)&quot;&gt;&lt;/app-buscador&gt;
+        &lt;/div&gt;
+
+        &lt;button class&#x3D;&quot;navbar-toggler&quot; (click)&#x3D;&quot;togglePopup()&quot; [class.open]&#x3D;&quot;isPopupOpen&quot; type&#x3D;&quot;button&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+            &lt;span class&#x3D;&quot;navbar-toggler-line&quot;&gt;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;navbar-toggler-line&quot;&gt;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;navbar-toggler-line&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+
+        &lt;div class&#x3D;&quot;navbar-popup&quot; *ngIf&#x3D;&quot;isPopupOpen &amp;&amp; isMobile&quot;&gt;
+            &lt;button class&#x3D;&quot;logout-button&quot; (click)&#x3D;&quot;logout()&quot;&gt;Cerrar Sesión&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./nav.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.navbar {
+    background-color: #10608f;
+    width: 100%;
+    height: 90px;
+    padding: 0.5rem 1rem;
+    font-family: &#x27;Roboto&#x27;, sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin-right: auto;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: #ffffff;
+    margin-left: 1rem;
+}
+
+.nav-link:hover {
+    color: #f0c14b;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+    transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+    color: #f0c14b;
+}
+
+
+.search-input-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+}
+
+.navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+
+.navbar-toggler-line {
+    background-color: #ffffff;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler.open .navbar-toggler-line:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+
+.navbar-toggler.open .navbar-toggler-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.open .navbar-toggler-line:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-popup {
+    position: fixed;
+    top: 10%;
+    right: 50%;
+    bottom: 0;
+    width: 50%;
+    max-width: 400px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    z-index: 1000;
+    color: #10608f;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    border-radius: 5%;
+}
+
+.navbar-popup.show {
+    transform: translateX(0);
+}
+
+.navbar-popup .nav-link,
+.navbar-popup .logout-button {
+    font-size: 1rem;
+    color: #10608f;
+    margin: 1rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-popup .nav-link:hover,
+.navbar-popup .logout-button:hover {
+    color: #f0c14b;
+    background-color: var(--primary-hover);
+}
+
+.desktop-only {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .navbar-toggler {
+        display: flex;
+    }
+
+    .navbar-toggler.open + .navbar-links {
+        display: flex;
+    }
+
+    .search-input-container {
+        max-width: 80%;
+        margin-top: 10px;
+    }
+
+    .navbar-popup.show {
+        display: flex;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar">    <div class="navbar-container">        <app-logo-nav class="navbar-logo"></app-logo-nav>        <div class="navbar-links">            <button class="logout-button" (click)="logout()">Cerrar Sesión</button>        </div>        <div class="search-input-container">            <app-buscador (searchTerm)="handleSearch($event)"></app-buscador>        </div>        <button class="navbar-toggler" (click)="togglePopup()" [class.open]="isPopupOpen" type="button" aria-label="Toggle navigation">            <span class="navbar-toggler-line"></span>            <span class="navbar-toggler-line"></span>            <span class="navbar-toggler-line"></span>        </button>        <div class="navbar-popup" *ngIf="isPopupOpen && isMobile">            <button class="logout-button" (click)="logout()">Cerrar Sesión</button>        </div>    </div></nav></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscadorComponent', 'selector': 'app-buscador'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterDataComponent', 'selector': 'app-footer-data'},{'name': 'FooterLogoComponent', 'selector': 'app-footer-logo'},{'name': 'FormActivoComponent', 'selector': 'app-form-activo'},{'name': 'FormEdificioComponent', 'selector': 'app-form-edificio'},{'name': 'FormLaborComponent', 'selector': 'app-form-labor'},{'name': 'FormOtComponent', 'selector': 'app-form-ot'},{'name': 'FormPisoComponent', 'selector': 'app-form-piso'},{'name': 'FormSectorComponent', 'selector': 'app-form-sector'},{'name': 'FormTareasComponent', 'selector': 'app-form-tareas'},{'name': 'FormUbicacionComponent', 'selector': 'app-form-ubicacion'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'FormUsuariosComponent', 'selector': 'app-form-usuarios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeLoggedComponent', 'selector': 'app-home-logged'},{'name': 'HomeOperarioComponent', 'selector': 'app-home-operario'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoNavComponent', 'selector': 'app-logo-nav'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NavegacionComponent', 'selector': 'app-navegacion'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OtBanerFechachicaComponent', 'selector': 'app-ot-baner-fechachica'},{'name': 'OtBannerChicoComponent', 'selector': 'app-ot-banner-chico'},{'name': 'OtBannerComponent', 'selector': 'app-ot-banner'},{'name': 'OtBannerFechaComponent', 'selector': 'app-ot-banner-fecha'},{'name': 'OtBannerLaborComponent', 'selector': 'app-ot-banner-labor'},{'name': 'OtCategoriasBannerComponent', 'selector': 'app-ot-categorias-banner'},{'name': 'OtComentariosComponent', 'selector': 'app-ot-comentarios'},{'name': 'OtComentariosContenedorQrComponent', 'selector': 'app-ot-comentarios-contenedor-qr'},{'name': 'OtComentariosQrComponent', 'selector': 'app-ot-comentarios-qr'},{'name': 'otComponent', 'selector': 'app-ot'},{'name': 'OtFechaImpresionComponent', 'selector': 'app-ot-fecha-impresion'},{'name': 'OtFechaRealizadaComponent', 'selector': 'app-ot-fecha-realizada'},{'name': 'OtInfoActivoComponent', 'selector': 'app-ot-info-activo'},{'name': 'OtInfoCodigoComponent', 'selector': 'app-ot-info-codigo'},{'name': 'OtInfoEdificioComponent', 'selector': 'app-ot-info-edificio'},{'name': 'OtInfoNComponent', 'selector': 'app-ot-info-n'},{'name': 'OtInfoPisoComponent', 'selector': 'app-ot-info-piso'},{'name': 'OtInfoSectorComponent', 'selector': 'app-ot-info-sector'},{'name': 'OtInstruccionesBannerComponent', 'selector': 'app-ot-instrucciones-banner'},{'name': 'OtInstruccionesTituloComponent', 'selector': 'app-ot-instrucciones-titulo'},{'name': 'OtLaborComponent', 'selector': 'app-ot-labor'},{'name': 'OtLogoBannerComponent', 'selector': 'app-ot-logo-banner'},{'name': 'OtTareaListaComponent', 'selector': 'app-ot-tareas-lista'},{'name': 'OtTareaOperarioComponent', 'selector': 'app-ot-tarea-operario'},{'name': 'OtTiempoComponent', 'selector': 'app-ot-tiempo'},{'name': 'OtTituloBannerComponent', 'selector': 'app-ot-titulo-banner'},{'name': 'PendientesComponent', 'selector': 'app-pendientes'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TerminadasComponent', 'selector': 'app-terminadas'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NavComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
