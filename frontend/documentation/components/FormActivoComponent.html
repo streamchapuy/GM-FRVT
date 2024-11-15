@@ -1,0 +1,1408 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gm-frvt documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gm-frvt documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FormActivoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/formularios/form-activo/form-activo.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-form-activo</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./form-activo.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./form-activo.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activo" >activo</a>
+                            </li>
+                            <li>
+                                <a href="#activos" >activos</a>
+                            </li>
+                            <li>
+                                <a href="#currentPage" >currentPage</a>
+                            </li>
+                            <li>
+                                <a href="#existencias" >existencias</a>
+                            </li>
+                            <li>
+                                <a href="#itemsPerPage" >itemsPerPage</a>
+                            </li>
+                            <li>
+                                <a href="#Math" >Math</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#crear" >crear</a>
+                            </li>
+                            <li>
+                                <a href="#editar" >editar</a>
+                            </li>
+                            <li>
+                                <a href="#eliminar" >eliminar</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarFormulario" >limpiarFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#nextPage" >nextPage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#obtenerActivos" >obtenerActivos</a>
+                            </li>
+                            <li>
+                                <a href="#prevPage" >prevPage</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarActivo" >seleccionarActivo</a>
+                            </li>
+                            <li>
+                                <a href="#volver" >volver</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#paginadoSectores" >paginadoSectores</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(activoService: <a href="../injectables/ActivoService.html" target="_self">ActivoService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ActivoService.html" target="_self" >ActivoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crear"></a>
+                    <span class="name">
+                        <span ><b>crear</b></span>
+                        <a href="#crear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crear()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editar"></a>
+                    <span class="name">
+                        <span ><b>editar</b></span>
+                        <a href="#editar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminar"></a>
+                    <span class="name">
+                        <span ><b>eliminar</b></span>
+                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarFormulario"></a>
+                    <span class="name">
+                        <span ><b>limpiarFormulario</b></span>
+                        <a href="#limpiarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextPage"></a>
+                    <span class="name">
+                        <span ><b>nextPage</b></span>
+                        <a href="#nextPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextPage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerActivos"></a>
+                    <span class="name">
+                        <span ><b>obtenerActivos</b></span>
+                        <a href="#obtenerActivos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>obtenerActivos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prevPage"></a>
+                    <span class="name">
+                        <span ><b>prevPage</b></span>
+                        <a href="#prevPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prevPage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarActivo"></a>
+                    <span class="name">
+                        <span ><b>seleccionarActivo</b></span>
+                        <a href="#seleccionarActivo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarActivo(activo: <a href="../interfaces/Activo.html" target="_self">Activo</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>activo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Activo.html" target="_self" >Activo</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volver"></a>
+                    <span class="name">
+                        <span ><b>volver</b></span>
+                        <a href="#volver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volver()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activo"></a>
+                    <span class="name">
+                        <span ><b>activo</b></span>
+                        <a href="#activo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Activo.html" target="_self" >Activo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    id_activo: 0,
+    nombre: &#x27;&#x27;,
+    abreviacion: &#x27;&#x27;,
+    existencia: &quot;&quot;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activos"></a>
+                    <span class="name">
+                        <span ><b>activos</b></span>
+                        <a href="#activos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Activo.html" target="_self" >Activo[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPage"></a>
+                    <span class="name">
+                        <span ><b>currentPage</b></span>
+                        <a href="#currentPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="existencias"></a>
+                    <span class="name">
+                        <span ><b>existencias</b></span>
+                        <a href="#existencias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {  nombre: &#x27;Si&#x27; },
+    {  nombre: &#x27;No&#x27; }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemsPerPage"></a>
+                    <span class="name">
+                        <span ><b>itemsPerPage</b></span>
+                        <a href="#itemsPerPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>6</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Math"></a>
+                    <span class="name">
+                        <span ><b>Math</b></span>
+                        <a href="#Math"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Math</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginadoSectores"></a>
+                        <span class="name"><b>paginadoSectores</b><a href="#paginadoSectores"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>paginadoSectores()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/formularios/form-activo/form-activo.component.ts:46</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivoService } from &#x27;../../../../services/activo.service&#x27;;
+import { Activo } from &#x27;../../../interfaces/activo&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+
+@Component({
+  selector: &#x27;app-form-activo&#x27;,
+  templateUrl: &#x27;./form-activo.component.html&#x27;,
+  styleUrls: [&#x27;./form-activo.component.css&#x27;]
+})
+export class FormActivoComponent implements OnInit {
+  activo: Activo &#x3D; {
+    id_activo: 0,
+    nombre: &#x27;&#x27;,
+    abreviacion: &#x27;&#x27;,
+    existencia: &quot;&quot;
+  };
+
+  existencias &#x3D; [
+    {  nombre: &#x27;Si&#x27; },
+    {  nombre: &#x27;No&#x27; }
+  ];
+
+  activos: Activo[] &#x3D; [];
+  currentPage: number &#x3D; 0;
+  itemsPerPage: number &#x3D; 6;
+  Math: any &#x3D; Math;
+
+  constructor(private activoService: ActivoService, private router: Router) { }
+
+  ngOnInit() {
+    this.obtenerActivos();
+  }
+
+  volver(){
+    this.router.navigate([&#x27;/home-logged&#x27;]);
+  }
+
+  obtenerActivos() {
+    this.activoService.obtenerActivos().subscribe((data: Activo[]) &#x3D;&gt; {
+      this.activos &#x3D; data;
+    });
+  }
+
+  get paginadoSectores() {
+    const start &#x3D; this.currentPage * this.itemsPerPage;
+    const end &#x3D; start + this.itemsPerPage;
+    return this.activos.slice(start, end);
+  }
+
+  nextPage(): void {
+    if (this.currentPage &lt; Math.ceil(this.activos.length / this.itemsPerPage) - 1) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage &gt; 0) {
+      this.currentPage--;
+    }
+  }
+
+  seleccionarActivo(activo: Activo) {
+    this.activo &#x3D; { ...activo };
+  }
+
+  crear() {
+    this.activoService.crearActivo(this.activo).subscribe({
+      next: (nuevoActivo) &#x3D;&gt; {
+        this.activos.push(nuevoActivo);
+        this.limpiarFormulario();
+      },
+      error: (err) &#x3D;&gt; console.error(&#x27;Error al crear activo:&#x27;, err)
+    });
+  }
+
+  editar() {
+    this.activoService.editarActivo(this.activo).subscribe({
+      next: () &#x3D;&gt; {
+        this.obtenerActivos();
+        this.limpiarFormulario();
+      },
+      error: (err) &#x3D;&gt; console.error(&#x27;Error al editar activo:&#x27;, err)
+    });
+  }
+
+  eliminar() {
+    if (this.activo.id_activo) {
+      this.activoService.eliminarActivo(this.activo.id_activo).subscribe({
+        next: () &#x3D;&gt; {
+          this.obtenerActivos();
+          this.limpiarFormulario();
+        },
+        error: (err) &#x3D;&gt; console.error(&#x27;Error al eliminar activo:&#x27;, err)
+      });
+    }
+  }
+
+  limpiarFormulario() {
+    this.activo &#x3D; {
+      id_activo: 0,
+      nombre: &#x27;&#x27;,
+      abreviacion: &#x27;&#x27;,
+      existencia: &quot;&quot;
+    };
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;form-activo-container&quot;&gt;
+  &lt;h2&gt;Formulario de Activo&lt;/h2&gt;
+
+  &lt;form&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;id_activo&quot;&gt;ID&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;id_activo&quot; [(ngModel)]&#x3D;&quot;activo.id_activo&quot; name&#x3D;&quot;id_activo&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;nombre&quot; [(ngModel)]&#x3D;&quot;activo.nombre&quot; name&#x3D;&quot;nombre&quot; maxlength&#x3D;&quot;100&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;abreviacion&quot;&gt;Abreviación&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;abreviacion&quot; [(ngModel)]&#x3D;&quot;activo.abreviacion&quot; name&#x3D;&quot;abreviacion&quot; maxlength&#x3D;&quot;10&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;existencia&quot;&gt;Existencia&lt;/label&gt;
+      &lt;select id&#x3D;&quot;existencia&quot; [(ngModel)]&#x3D;&quot;activo.existencia&quot; name&#x3D;&quot;existencia&quot;&gt;
+        &lt;option *ngFor&#x3D;&quot;let existencia of existencias&quot; [value]&#x3D;&quot;existencia.nombre&quot;&gt;
+          {{ existencia.nombre }}
+        &lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-actions&quot;&gt;
+      &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;volver()&quot;&gt;Volver&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;crear()&quot;&gt;Crear&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;editar()&quot;&gt;Editar&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;Eliminar&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+  &lt;div class&#x3D;&quot;lista-activos-container&quot;&gt;
+    &lt;h2&gt;Lista de Activos&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;table-container&quot;&gt;
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Activo&lt;/th&gt;
+            &lt;th&gt;Nombre&lt;/th&gt;
+            &lt;th&gt;Abreviación&lt;/th&gt;
+            &lt;th&gt;¿Existe?&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor&#x3D;&quot;let activo of paginadoSectores&quot; (click)&#x3D;&quot;seleccionarActivo(activo)&quot;&gt;
+            &lt;td&gt;{{ activo.id_activo }}&lt;/td&gt;
+            &lt;td&gt;{{ activo.nombre }}&lt;/td&gt;
+            &lt;td&gt;{{ activo.abreviacion }}&lt;/td&gt;
+            &lt;td&gt;{{ activo.existencia }}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class&#x3D;&quot;pagination-controls&quot;&gt;
+    &lt;button (click)&#x3D;&quot;prevPage()&quot; [disabled]&#x3D;&quot;currentPage &#x3D;&#x3D;&#x3D; 0&quot;&gt;Anterior&lt;/button&gt;
+    &lt;span&gt;Página {{ currentPage + 1 }} de {{ Math.ceil(activos.length / itemsPerPage) }}&lt;/span&gt;
+    &lt;button (click)&#x3D;&quot;nextPage()&quot; [disabled]&#x3D;&quot;currentPage &gt;&#x3D; (activos.length / itemsPerPage) - 1&quot;&gt;Siguiente&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./form-activo.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.form-activo-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: &#x27;Poppins&#x27;, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type&#x3D;&quot;number&quot;],
+input[type&#x3D;&quot;text&quot;],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type&#x3D;&quot;number&quot;]:focus,
+input[type&#x3D;&quot;text&quot;]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    background-color: #0c486c;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-around;;
+    text-align: center;
+    margin-top: 0px;
+}
+span{
+    margin-top: 8px;
+}
+
+
+.lista-activos-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="form-activo-container">  <h2>Formulario de Activo</h2>  <form>    <div class="form-group">      <label for="id_activo">ID</label>      <input type="number" id="id_activo" [(ngModel)]="activo.id_activo" name="id_activo" />    </div>    <div class="form-group">      <label for="nombre">Nombre</label>      <input type="text" id="nombre" [(ngModel)]="activo.nombre" name="nombre" maxlength="100" />    </div>    <div class="form-group">      <label for="abreviacion">Abreviación</label>      <input type="text" id="abreviacion" [(ngModel)]="activo.abreviacion" name="abreviacion" maxlength="10" />    </div>    <div class="form-group">      <label for="existencia">Existencia</label>      <select id="existencia" [(ngModel)]="activo.existencia" name="existencia">        <option *ngFor="let existencia of existencias" [value]="existencia.nombre">          {{ existencia.nombre }}        </option>      </select>    </div>    <div class="form-actions">      <button type="button" (click)="volver()">Volver</button>      <button type="button" (click)="crear()">Crear</button>      <button type="button" (click)="editar()">Editar</button>      <button type="button" (click)="eliminar()">Eliminar</button>      <button type="button" (click)="limpiarFormulario()">Limpiar</button>    </div>  </form>  <div class="lista-activos-container">    <h2>Lista de Activos</h2>    <div class="table-container">      <table>        <thead>          <tr>            <th>Activo</th>            <th>Nombre</th>            <th>Abreviación</th>            <th>¿Existe?</th>          </tr>        </thead>        <tbody>          <tr *ngFor="let activo of paginadoSectores" (click)="seleccionarActivo(activo)">            <td>{{ activo.id_activo }}</td>            <td>{{ activo.nombre }}</td>            <td>{{ activo.abreviacion }}</td>            <td>{{ activo.existencia }}</td>          </tr>        </tbody>      </table>    </div>  </div>    <div class="pagination-controls">    <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>    <span>Página {{ currentPage + 1 }} de {{ Math.ceil(activos.length / itemsPerPage) }}</span>    <button (click)="nextPage()" [disabled]="currentPage >= (activos.length / itemsPerPage) - 1">Siguiente</button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscadorComponent', 'selector': 'app-buscador'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterDataComponent', 'selector': 'app-footer-data'},{'name': 'FooterLogoComponent', 'selector': 'app-footer-logo'},{'name': 'FormActivoComponent', 'selector': 'app-form-activo'},{'name': 'FormEdificioComponent', 'selector': 'app-form-edificio'},{'name': 'FormLaborComponent', 'selector': 'app-form-labor'},{'name': 'FormOtComponent', 'selector': 'app-form-ot'},{'name': 'FormPisoComponent', 'selector': 'app-form-piso'},{'name': 'FormSectorComponent', 'selector': 'app-form-sector'},{'name': 'FormTareasComponent', 'selector': 'app-form-tareas'},{'name': 'FormUbicacionComponent', 'selector': 'app-form-ubicacion'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'FormUsuariosComponent', 'selector': 'app-form-usuarios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeLoggedComponent', 'selector': 'app-home-logged'},{'name': 'HomeOperarioComponent', 'selector': 'app-home-operario'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoNavComponent', 'selector': 'app-logo-nav'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NavegacionComponent', 'selector': 'app-navegacion'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OtBanerFechachicaComponent', 'selector': 'app-ot-baner-fechachica'},{'name': 'OtBannerChicoComponent', 'selector': 'app-ot-banner-chico'},{'name': 'OtBannerComponent', 'selector': 'app-ot-banner'},{'name': 'OtBannerFechaComponent', 'selector': 'app-ot-banner-fecha'},{'name': 'OtBannerLaborComponent', 'selector': 'app-ot-banner-labor'},{'name': 'OtCategoriasBannerComponent', 'selector': 'app-ot-categorias-banner'},{'name': 'OtComentariosComponent', 'selector': 'app-ot-comentarios'},{'name': 'OtComentariosContenedorQrComponent', 'selector': 'app-ot-comentarios-contenedor-qr'},{'name': 'OtComentariosQrComponent', 'selector': 'app-ot-comentarios-qr'},{'name': 'otComponent', 'selector': 'app-ot'},{'name': 'OtFechaImpresionComponent', 'selector': 'app-ot-fecha-impresion'},{'name': 'OtFechaRealizadaComponent', 'selector': 'app-ot-fecha-realizada'},{'name': 'OtInfoActivoComponent', 'selector': 'app-ot-info-activo'},{'name': 'OtInfoCodigoComponent', 'selector': 'app-ot-info-codigo'},{'name': 'OtInfoEdificioComponent', 'selector': 'app-ot-info-edificio'},{'name': 'OtInfoNComponent', 'selector': 'app-ot-info-n'},{'name': 'OtInfoPisoComponent', 'selector': 'app-ot-info-piso'},{'name': 'OtInfoSectorComponent', 'selector': 'app-ot-info-sector'},{'name': 'OtInstruccionesBannerComponent', 'selector': 'app-ot-instrucciones-banner'},{'name': 'OtInstruccionesTituloComponent', 'selector': 'app-ot-instrucciones-titulo'},{'name': 'OtLaborComponent', 'selector': 'app-ot-labor'},{'name': 'OtLogoBannerComponent', 'selector': 'app-ot-logo-banner'},{'name': 'OtTareaListaComponent', 'selector': 'app-ot-tareas-lista'},{'name': 'OtTareaOperarioComponent', 'selector': 'app-ot-tarea-operario'},{'name': 'OtTiempoComponent', 'selector': 'app-ot-tiempo'},{'name': 'OtTituloBannerComponent', 'selector': 'app-ot-titulo-banner'},{'name': 'PendientesComponent', 'selector': 'app-pendientes'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TerminadasComponent', 'selector': 'app-terminadas'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FormActivoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FormActivoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

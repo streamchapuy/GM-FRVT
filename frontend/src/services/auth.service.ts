@@ -12,7 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   register(user: any): Observable<any> {
-    // Enviar solo email y contrasena (confirmPassword no es necesario aquí)
     const registrationData = {
       nombre: user.nombre,
       email: user.email,

@@ -1,8 +1,7 @@
-// src/app/services/orden-trabajo.service.ts
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NumeroOT } from '../app/interfaces/numero-ot'; // Asegúrate de que la ruta sea correcta
+import { NumeroOT } from '../app/interfaces/numero-ot';
 
 @Injectable({
   providedIn: 'root'
